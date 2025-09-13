@@ -1,0 +1,3261 @@
+{
+	"id": "075b95ec-d8b7-493a-8c6f-49869732f310",
+	"name": "ClickUp Task Management API Tests",
+	"timestamp": "2025-09-13T16:47:53.105Z",
+	"collection_id": "45512473-90b91a5a-01c9-4b55-9039-3e64b2359560",
+	"folder_id": 0,
+	"environment_id": "45512473-1c932ac5-8ead-4aaf-bd25-63e063d4c4a2",
+	"totalPass": 382,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-09-13T16:47:27.080Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "23b84bdb-6ae9-4fea-abc1-221e2cc23142",
+			"name": "Verify Token",
+			"url": "https://api.clickup.com/api/v2/team",
+			"time": 155,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 - Token is valid": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 - Token is valid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				155
+			],
+			"allTests": [
+				{
+					"Status code is 200 - Token is valid": true
+				}
+			]
+		},
+		{
+			"id": "d2a4cafc-b2fd-4675-93ab-29fdbf5fbb6b",
+			"name": "Negative Test – No Authorization",
+			"url": "https://api.clickup.com/api/v2/team",
+			"time": 52,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400 - Authorization header required": true,
+				"Response contains correct error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400 - Authorization header required": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains correct error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				52
+			],
+			"allTests": [
+				{
+					"Status code is 400 - Authorization header required": true,
+					"Response contains correct error message": true
+				}
+			]
+		},
+		{
+			"id": "7d175e68-41ef-4384-9252-e651a37aeba5",
+			"name": "Get List Spaces",
+			"url": "https://api.clickup.com/api/v2/team/90151607697/space",
+			"time": 136,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"At least 1 Space exists": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"At least 1 Space exists": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				136
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"At least 1 Space exists": true
+				}
+			]
+		},
+		{
+			"id": "8bd11baa-ad71-4746-8b29-440e44c0b55d",
+			"name": "Get Space by ID",
+			"url": "https://api.clickup.com/api/v2/space/90156623765",
+			"time": 147,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Space has required fields": true,
+				"Space ID matches requested ID": true,
+				"Space is not archived": true,
+				"Space features are properly configured": true,
+				"Space has valid name and ID format": true,
+				"Environment variables saved successfully": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Space has required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Space ID matches requested ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Space is not archived": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Space features are properly configured": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Space has valid name and ID format": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Environment variables saved successfully": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				147
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Space has required fields": true,
+					"Space ID matches requested ID": true,
+					"Space is not archived": true,
+					"Space features are properly configured": true,
+					"Space has valid name and ID format": true,
+					"Environment variables saved successfully": true
+				}
+			]
+		},
+		{
+			"id": "701ffd1e-d26b-439e-8da6-501dd0f1b552",
+			"name": "Update Space",
+			"url": "https://api.clickup.com/api/v2/space/90156623765",
+			"time": 255,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Space name matches the generated random name": true,
+				"Space ID remains unchanged after update": true,
+				"Space configuration preserved after name update": true,
+				"Name update was successful and different from original": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Space name matches the generated random name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Space ID remains unchanged after update": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Space configuration preserved after name update": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name update was successful and different from original": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				255
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Space name matches the generated random name": true,
+					"Space ID remains unchanged after update": true,
+					"Space configuration preserved after name update": true,
+					"Name update was successful and different from original": true
+				}
+			]
+		},
+		{
+			"id": "291af5f6-9390-49c1-a4a5-d7d9edd55d25",
+			"name": "Create Folder",
+			"url": "https://api.clickup.com/api/v2/space/90156623765/folder",
+			"time": 776,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Folder has ID": true,
+				"Folder has Name": true,
+				"Folder belongs to correct space": true,
+				"Folder has creation date": true,
+				"Folder deletion status": true,
+				"Folder name matches exactly what was sent": true,
+				"Folder name is not empty": true,
+				"Folder name length is reasonable": true,
+				"Folder created with unique ID": true,
+				"Created folder is not deleted by default": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder has Name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder belongs to correct space": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder has creation date": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder deletion status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder name matches exactly what was sent": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder name is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder name length is reasonable": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder created with unique ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Created folder is not deleted by default": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				776
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Folder has ID": true,
+					"Folder has Name": true,
+					"Folder belongs to correct space": true,
+					"Folder has creation date": true,
+					"Folder deletion status": true,
+					"Folder name matches exactly what was sent": true,
+					"Folder name is not empty": true,
+					"Folder name length is reasonable": true,
+					"Folder created with unique ID": true,
+					"Created folder is not deleted by default": true
+				}
+			]
+		},
+		{
+			"id": "a82e95cc-7419-43fc-848c-000a2b3e34ff",
+			"name": "Create Folder for Deletion",
+			"url": "https://api.clickup.com/api/v2/space/90156623765/folder",
+			"time": 1095,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Folder has ID": true,
+				"Folder has Name": true,
+				"Folder belongs to correct space": true,
+				"Folder has creation date": true,
+				"Folder deletion status": true,
+				"Folder name matches exactly what was sent": true,
+				"Folder name is not empty": true,
+				"Folder name length is reasonable": true,
+				"Prerequisites exist for folder comparison": true,
+				"Deletion folder has different ID than main folder": true,
+				"Deletion folder name differs from main folder": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder has Name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder belongs to correct space": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder has creation date": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder deletion status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder name matches exactly what was sent": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder name is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder name length is reasonable": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Prerequisites exist for folder comparison": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deletion folder has different ID than main folder": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deletion folder name differs from main folder": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1095
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Folder has ID": true,
+					"Folder has Name": true,
+					"Folder belongs to correct space": true,
+					"Folder has creation date": true,
+					"Folder deletion status": true,
+					"Folder name matches exactly what was sent": true,
+					"Folder name is not empty": true,
+					"Folder name length is reasonable": true,
+					"Prerequisites exist for folder comparison": true,
+					"Deletion folder has different ID than main folder": true,
+					"Deletion folder name differs from main folder": true
+				}
+			]
+		},
+		{
+			"id": "40c1471b-cdfd-4940-8563-4f78b8e8c50d",
+			"name": "Get Folder by ID",
+			"url": "https://api.clickup.com/api/v2/folder/90159665893",
+			"time": 189,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Retrieved folder matches requested folder ID": true,
+				"Folder has ID": true,
+				"Folder has Name": true,
+				"Folder belongs to correct space": true,
+				"Folder has creation date": true,
+				"Folder deletion status": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Retrieved folder matches requested folder ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder has Name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder belongs to correct space": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder has creation date": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder deletion status": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				189
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Retrieved folder matches requested folder ID": true,
+					"Folder has ID": true,
+					"Folder has Name": true,
+					"Folder belongs to correct space": true,
+					"Folder has creation date": true,
+					"Folder deletion status": true
+				}
+			]
+		},
+		{
+			"id": "79fdaf72-c2a8-4968-b53f-69155c29ab3b",
+			"name": "Update Folder Name",
+			"url": "https://api.clickup.com/api/v2/folder/90159665893",
+			"time": 248,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Prerequisites for update validation exist": true,
+				"Folder ID remains unchanged after update": true,
+				"Folder name was actually updated": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Prerequisites for update validation exist": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder ID remains unchanged after update": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder name was actually updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				248
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Prerequisites for update validation exist": true,
+					"Folder ID remains unchanged after update": true,
+					"Folder name was actually updated": true
+				}
+			]
+		},
+		{
+			"id": "e35a5e90-a00d-491f-8646-4242e8a89f19",
+			"name": "Delete Folder",
+			"url": "https://api.clickup.com/api/v2/folder/90159665894",
+			"time": 243,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"DELETE operation prerequisites and basic validation": true,
+				"DELETE response body validation": true
+			},
+			"testPassFailCounts": {
+				"DELETE operation prerequisites and basic validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"DELETE response body validation": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				243
+			],
+			"allTests": [
+				{
+					"DELETE operation prerequisites and basic validation": true,
+					"DELETE response body validation": true
+				}
+			]
+		},
+		{
+			"id": "d5e6987a-0b4e-48d1-9b47-0eb114d99470",
+			"name": "Folder Deletion Verification",
+			"url": "https://api.clickup.com/api/v2/folder/90159665894",
+			"time": 212,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"DELETE verification - prerequisites and basic validation": true,
+				"SOFT DELETE - core validations": true,
+				"SOFT DELETE - task count should be zero": true,
+				"SOFT DELETE - lists should be empty": true,
+				"SOFT DELETE - required fields validation": true
+			},
+			"testPassFailCounts": {
+				"DELETE verification - prerequisites and basic validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"SOFT DELETE - core validations": {
+					"pass": 1,
+					"fail": 0
+				},
+				"SOFT DELETE - task count should be zero": {
+					"pass": 1,
+					"fail": 0
+				},
+				"SOFT DELETE - lists should be empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"SOFT DELETE - required fields validation": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				212
+			],
+			"allTests": [
+				{
+					"DELETE verification - prerequisites and basic validation": true,
+					"SOFT DELETE - core validations": true,
+					"SOFT DELETE - task count should be zero": true,
+					"SOFT DELETE - lists should be empty": true,
+					"SOFT DELETE - required fields validation": true
+				}
+			]
+		},
+		{
+			"id": "a5d1c0e4-4072-4090-b4dd-fa6b1f71c9cf",
+			"name": "Get Templates",
+			"url": "https://api.clickup.com/api/v2/team/90151607697/list_template",
+			"time": 118,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Response has templates array": true,
+				"Templates have valid structure": true,
+				"Store template data": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has templates array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Templates have valid structure": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Store template data": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				118
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Response has templates array": true,
+					"Templates have valid structure": true,
+					"Store template data": true
+				}
+			]
+		},
+		{
+			"id": "ddd6d8a0-898c-454e-a894-23692a15ea83",
+			"name": "Create List From Template",
+			"url": "https://api.clickup.com/api/v2/folder/90159665893/list_template/t-901515175804",
+			"time": 376,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Template prerequisites validation": true,
+				"Response has expected structure for list creation": true,
+				"Created list has required properties": true,
+				"List properties match template request": true,
+				"Handle potential API inconsistencies": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Template prerequisites validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has expected structure for list creation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Created list has required properties": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List properties match template request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Handle potential API inconsistencies": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				376
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Template prerequisites validation": true,
+					"Response has expected structure for list creation": true,
+					"Created list has required properties": true,
+					"List properties match template request": true,
+					"Handle potential API inconsistencies": true
+				}
+			]
+		},
+		{
+			"id": "5aa7c238-cc64-49fc-b28e-2c941d5f5268",
+			"name": "Create Additional List",
+			"url": "https://api.clickup.com/api/v2/folder/90159665893/list",
+			"time": 495,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"List has ID": true,
+				"List has Name": true,
+				"List belongs to correct space": true,
+				"List name is unique and matches expected pattern": true,
+				"List content is correctly set": true,
+				"List dates are set correctly and logically": true,
+				"Inbound address follows correct pattern and is unique": true,
+				"Store list ID for multi-list testing": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List has Name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List belongs to correct space": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List name is unique and matches expected pattern": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List content is correctly set": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List dates are set correctly and logically": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Inbound address follows correct pattern and is unique": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Store list ID for multi-list testing": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				495
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"List has ID": true,
+					"List has Name": true,
+					"List belongs to correct space": true,
+					"List name is unique and matches expected pattern": true,
+					"List content is correctly set": true,
+					"List dates are set correctly and logically": true,
+					"Inbound address follows correct pattern and is unique": true,
+					"Store list ID for multi-list testing": true
+				}
+			]
+		},
+		{
+			"id": "50d5fb96-8918-43c9-a56d-987326f02520",
+			"name": "Create Folderless List",
+			"url": "https://api.clickup.com/api/v2/space/90156623765/list",
+			"time": 1383,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"List has ID": true,
+				"List has Name": true,
+				"List belongs to correct space": true,
+				"List name matches sent data": true,
+				"List description contains special characters": true,
+				"Start date is correctly set": true,
+				"Due date is correctly set": true,
+				"Priority is correctly set": true,
+				"Status is correctly set": true,
+				"Assignee is correctly set": true,
+				"Content is correctly set": true,
+				"Store ClickUp's actual color mapping for future reference": true,
+				"List has required structure": true,
+				"Folder is hidden (folderless list characteristic)": true,
+				"Space access is granted": true,
+				"Statuses array is properly configured": true,
+				"Inbound email address is generated": true,
+				"List is not archived initially": true,
+				"Order index is set to 0 for new list": true,
+				"Store list ID for future operations": true,
+				"Business rule: Due date after start date": true,
+				"UTF-8 characters are preserved": true,
+				"Inbound email follows correct pattern": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List has Name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List belongs to correct space": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List name matches sent data": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List description contains special characters": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Start date is correctly set": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Due date is correctly set": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Priority is correctly set": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status is correctly set": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Assignee is correctly set": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content is correctly set": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Store ClickUp's actual color mapping for future reference": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List has required structure": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Folder is hidden (folderless list characteristic)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Space access is granted": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Statuses array is properly configured": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Inbound email address is generated": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List is not archived initially": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Order index is set to 0 for new list": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Store list ID for future operations": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Business rule: Due date after start date": {
+					"pass": 1,
+					"fail": 0
+				},
+				"UTF-8 characters are preserved": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Inbound email follows correct pattern": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1383
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"List has ID": true,
+					"List has Name": true,
+					"List belongs to correct space": true,
+					"List name matches sent data": true,
+					"List description contains special characters": true,
+					"Start date is correctly set": true,
+					"Due date is correctly set": true,
+					"Priority is correctly set": true,
+					"Status is correctly set": true,
+					"Assignee is correctly set": true,
+					"Content is correctly set": true,
+					"Store ClickUp's actual color mapping for future reference": true,
+					"List has required structure": true,
+					"Folder is hidden (folderless list characteristic)": true,
+					"Space access is granted": true,
+					"Statuses array is properly configured": true,
+					"Inbound email address is generated": true,
+					"List is not archived initially": true,
+					"Order index is set to 0 for new list": true,
+					"Store list ID for future operations": true,
+					"Business rule: Due date after start date": true,
+					"UTF-8 characters are preserved": true,
+					"Inbound email follows correct pattern": true
+				}
+			]
+		},
+		{
+			"id": "eee9ba5b-d0bf-412c-a6c1-b2280ff36509",
+			"name": "Get Folderless Lists",
+			"url": "https://api.clickup.com/api/v2/space/90156623765/list",
+			"time": 217,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"API returns lists successfully": true,
+				"Space contains folderless lists": true,
+				"Lists have essential data": true,
+				"Response time acceptable": true
+			},
+			"testPassFailCounts": {
+				"API returns lists successfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Space contains folderless lists": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Lists have essential data": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time acceptable": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				217
+			],
+			"allTests": [
+				{
+					"API returns lists successfully": true,
+					"Space contains folderless lists": true,
+					"Lists have essential data": true,
+					"Response time acceptable": true
+				}
+			]
+		},
+		{
+			"id": "113e50b0-f8bc-4d90-924c-c4958ff33c25",
+			"name": "Update Folderless List",
+			"url": "https://api.clickup.com/api/v2/list/901515198074",
+			"time": 525,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"List has ID": true,
+				"List has Name": true,
+				"List belongs to correct space": true,
+				"List ID remains unchanged after update": true,
+				"List name updated successfully": true,
+				"Content updated with Unicode characters preserved": true,
+				"Status updated correctly": true,
+				"Due date updated correctly": true,
+				"Immutable fields unchanged": true,
+				"Update appears recent": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List has Name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List belongs to correct space": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List ID remains unchanged after update": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List name updated successfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content updated with Unicode characters preserved": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status updated correctly": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Due date updated correctly": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Immutable fields unchanged": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Update appears recent": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				525
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"List has ID": true,
+					"List has Name": true,
+					"List belongs to correct space": true,
+					"List ID remains unchanged after update": true,
+					"List name updated successfully": true,
+					"Content updated with Unicode characters preserved": true,
+					"Status updated correctly": true,
+					"Due date updated correctly": true,
+					"Immutable fields unchanged": true,
+					"Update appears recent": true
+				}
+			]
+		},
+		{
+			"id": "3ae1d1d9-175f-4590-baec-64cee0606383",
+			"name": "Delete Folderless List",
+			"url": "https://api.clickup.com/api/v2/list/901515198074",
+			"time": 208,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"List deleted successfully": true,
+				"Delete operation performance": true,
+				"Rate limit check": true,
+				"Environment cleanup": true
+			},
+			"testPassFailCounts": {
+				"List deleted successfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Delete operation performance": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Rate limit check": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Environment cleanup": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				208
+			],
+			"allTests": [
+				{
+					"List deleted successfully": true,
+					"Delete operation performance": true,
+					"Rate limit check": true,
+					"Environment cleanup": true
+				}
+			]
+		},
+		{
+			"id": "36073256-b499-4e4a-89d2-6584145fea3b",
+			"name": "Create Task - Basic_Validation",
+			"url": "https://api.clickup.com/api/v2/list/901515198071/task",
+			"time": 529,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Task has ID": true,
+				"Task has Name": true,
+				"Task has Description": true,
+				"Task Priority is valid": true,
+				"Task name matches exactly what was sent": true,
+				"Task description matches what was sent": true,
+				"Task priority matches what was sent": true,
+				"Task priority is within valid range (1-3)": true,
+				"Description meets minimum length requirement (1000+ characters)": true,
+				"Description does not contain suspicious content": true,
+				"Task ID is saved to environment": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has Name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has Description": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task Priority is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task name matches exactly what was sent": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task description matches what was sent": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task priority matches what was sent": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task priority is within valid range (1-3)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Description meets minimum length requirement (1000+ characters)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Description does not contain suspicious content": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task ID is saved to environment": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				529
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Task has ID": true,
+					"Task has Name": true,
+					"Task has Description": true,
+					"Task Priority is valid": true,
+					"Task name matches exactly what was sent": true,
+					"Task description matches what was sent": true,
+					"Task priority matches what was sent": true,
+					"Task priority is within valid range (1-3)": true,
+					"Description meets minimum length requirement (1000+ characters)": true,
+					"Description does not contain suspicious content": true,
+					"Task ID is saved to environment": true
+				}
+			]
+		},
+		{
+			"id": "d84daed9-6638-4e64-b130-21f4d5409d37",
+			"name": "Get Task by ID - Consistency Check",
+			"url": "https://api.clickup.com/api/v2/task/86c5fnjwn",
+			"time": 437,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Task has ID": true,
+				"Task has Name": true,
+				"Task has Description": true,
+				"Task Priority is valid": true,
+				"Retrieved task ID matches requested ID": true,
+				"Retrieved task name matches created task": true,
+				"Retrieved task description matches created task": true,
+				"Retrieved task priority matches created task": true,
+				"Task has ClickUp status metadata": true,
+				"Task has creator information": true,
+				"Task has creation timestamp": true,
+				"Task creation timestamp is within acceptable range": true,
+				"Task belongs to correct list": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has Name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has Description": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task Priority is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Retrieved task ID matches requested ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Retrieved task name matches created task": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Retrieved task description matches created task": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Retrieved task priority matches created task": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has ClickUp status metadata": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has creator information": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has creation timestamp": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task creation timestamp is within acceptable range": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task belongs to correct list": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				437
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Task has ID": true,
+					"Task has Name": true,
+					"Task has Description": true,
+					"Task Priority is valid": true,
+					"Retrieved task ID matches requested ID": true,
+					"Retrieved task name matches created task": true,
+					"Retrieved task description matches created task": true,
+					"Retrieved task priority matches created task": true,
+					"Task has ClickUp status metadata": true,
+					"Task has creator information": true,
+					"Task has creation timestamp": true,
+					"Task creation timestamp is within acceptable range": true,
+					"Task belongs to correct list": true
+				}
+			]
+		},
+		{
+			"id": "fbfa87d5-b0f6-4fde-b927-2d6eb79fd483",
+			"name": "Create Task with Assignment and Unicode",
+			"url": "https://api.clickup.com/api/v2/list/901515198071/task",
+			"time": 722,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Task has ID": true,
+				"Task has Name": true,
+				"Task has Description": true,
+				"Task Priority is valid": true,
+				"Chinese name matches exactly": true,
+				"Chinese name integrity (no broken encoding)": true,
+				"Task priority matches sent value": true,
+				"Task is assigned to correct user": true,
+				"Task is in template list": true,
+				"Task 2 ID is saved to environment": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has Name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has Description": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task Priority is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Chinese name matches exactly": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Chinese name integrity (no broken encoding)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task priority matches sent value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task is assigned to correct user": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task is in template list": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task 2 ID is saved to environment": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				722
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Task has ID": true,
+					"Task has Name": true,
+					"Task has Description": true,
+					"Task Priority is valid": true,
+					"Chinese name matches exactly": true,
+					"Chinese name integrity (no broken encoding)": true,
+					"Task priority matches sent value": true,
+					"Task is assigned to correct user": true,
+					"Task is in template list": true,
+					"Task 2 ID is saved to environment": true
+				}
+			]
+		},
+		{
+			"id": "36f76d53-0029-4f66-9d8c-5388a633769f",
+			"name": "Create Task - Boundary Conditions Test",
+			"url": "https://api.clickup.com/api/v2/list/901515198072/task",
+			"time": 622,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Task has ID": true,
+				"Task has Name": true,
+				"Task has Description": true,
+				"Task Priority is valid": true,
+				"Task 3 ID is saved to environment": true,
+				"Long numeric name is handled correctly": true,
+				"Minimum priority (Urgent) is set correctly": true,
+				"Far future dates are handled correctly": true,
+				"Maximum tags are handled correctly": true,
+				"Maximum time estimate is handled correctly": true,
+				"Special characters in description are preserved": true,
+				"Task handles boundary conditions without errors": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has Name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has Description": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task Priority is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task 3 ID is saved to environment": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Long numeric name is handled correctly": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Minimum priority (Urgent) is set correctly": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Far future dates are handled correctly": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Maximum tags are handled correctly": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Maximum time estimate is handled correctly": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Special characters in description are preserved": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task handles boundary conditions without errors": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				622
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Task has ID": true,
+					"Task has Name": true,
+					"Task has Description": true,
+					"Task Priority is valid": true,
+					"Task 3 ID is saved to environment": true,
+					"Long numeric name is handled correctly": true,
+					"Minimum priority (Urgent) is set correctly": true,
+					"Far future dates are handled correctly": true,
+					"Maximum tags are handled correctly": true,
+					"Maximum time estimate is handled correctly": true,
+					"Special characters in description are preserved": true,
+					"Task handles boundary conditions without errors": true
+				}
+			]
+		},
+		{
+			"id": "067f8026-a42b-4eeb-97b2-770caff0a17e",
+			"name": "Create Task - Invalid Data (Missing Name)",
+			"url": "https://api.clickup.com/api/v2/list/901515198071/task",
+			"time": 90,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400 Bad Request": true,
+				"Response indicates name field issue": true,
+				"Response time is reasonable for error": true,
+				"Error response has proper structure": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400 Bad Request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response indicates name field issue": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is reasonable for error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response has proper structure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				90
+			],
+			"allTests": [
+				{
+					"Status code is 400 Bad Request": true,
+					"Response indicates name field issue": true,
+					"Response time is reasonable for error": true,
+					"Error response has proper structure": true
+				}
+			]
+		},
+		{
+			"id": "c4f275f0-07a8-4a91-803a-2e3d6f2d40be",
+			"name": "Create Task - Invalid Date Format",
+			"url": "https://api.clickup.com/api/v2/list/901515198071/task",
+			"time": 95,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code indicates validation error": true,
+				"Error message mentions date issue": true,
+				"Error response has proper structure": true,
+				"Response time acceptable for validation error": true
+			},
+			"testPassFailCounts": {
+				"Status code indicates validation error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error message mentions date issue": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response has proper structure": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time acceptable for validation error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				95
+			],
+			"allTests": [
+				{
+					"Status code indicates validation error": true,
+					"Error message mentions date issue": true,
+					"Error response has proper structure": true,
+					"Response time acceptable for validation error": true
+				}
+			]
+		},
+		{
+			"id": "ac516ed9-52e0-4e07-81ed-c1908ee93c2c",
+			"name": "Add Task to Multiple Lists",
+			"url": "https://api.clickup.com/api/v2/list/901515198072/task/86c5fnjwq",
+			"time": 359,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Task add to list operation completed successfully": true,
+				"Response body is empty as expected": true,
+				"Request URL contains correct list and task IDs": true,
+				"Request payload is correct for add operation": true,
+				"Rate limits are monitored": true,
+				"Operation represents valid task-to-list relationship": true,
+				"Environment variables updated for chain testing": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task add to list operation completed successfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is empty as expected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Request URL contains correct list and task IDs": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Request payload is correct for add operation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Rate limits are monitored": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Operation represents valid task-to-list relationship": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Environment variables updated for chain testing": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				359
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Task add to list operation completed successfully": true,
+					"Response body is empty as expected": true,
+					"Request URL contains correct list and task IDs": true,
+					"Request payload is correct for add operation": true,
+					"Rate limits are monitored": true,
+					"Operation represents valid task-to-list relationship": true,
+					"Environment variables updated for chain testing": true
+				}
+			]
+		},
+		{
+			"id": "e4c1ce3e-3f5e-4a57-9544-ec1af83bbd0f",
+			"name": "Upload Task Attachment",
+			"url": "https://api.clickup.com/api/v2/task/86c5fnjwn/attachment",
+			"time": 570,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Attachment is successfully created": true,
+				"Attachment has correct filename and title": true,
+				"Attachment extension is correct": true,
+				"Attachment ID has correct format": true,
+				"Attachment URLs are valid": true,
+				"Attachment date is valid": true,
+				"Attachment version and source are correct": true,
+				"Attachment thumbnails are null for txt files": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Attachment is successfully created": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Attachment has correct filename and title": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Attachment extension is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Attachment ID has correct format": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Attachment URLs are valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Attachment date is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Attachment version and source are correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Attachment thumbnails are null for txt files": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				570
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Attachment is successfully created": true,
+					"Attachment has correct filename and title": true,
+					"Attachment extension is correct": true,
+					"Attachment ID has correct format": true,
+					"Attachment URLs are valid": true,
+					"Attachment date is valid": true,
+					"Attachment version and source are correct": true,
+					"Attachment thumbnails are null for txt files": true
+				}
+			]
+		},
+		{
+			"id": "1311d768-50fa-4016-8ce4-9d2fc7fbbedb",
+			"name": "Update Task - Complete Fields Modification",
+			"url": "https://api.clickup.com/api/v2/task/86c5fnjwu",
+			"time": 1080,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Task has ID": true,
+				"Task has Name": true,
+				"Task has Description": true,
+				"Task Priority is valid": true,
+				"Task name updated from numeric to alpha": true,
+				"Priority successfully changed from Urgent(1) to Low(3)": true,
+				"Description updated with emoji support": true,
+				"Time estimate reduced from 24h to 1h": true,
+				"Dates updated to near future (within next month)": true,
+				"Task update timestamp is recent": true,
+				"Task still belongs to correct list": true,
+				"Update handles character encoding correctly": true,
+				"All required fields maintained after update": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has Name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task has Description": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task Priority is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task name updated from numeric to alpha": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Priority successfully changed from Urgent(1) to Low(3)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Description updated with emoji support": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Time estimate reduced from 24h to 1h": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Dates updated to near future (within next month)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task update timestamp is recent": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task still belongs to correct list": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Update handles character encoding correctly": {
+					"pass": 1,
+					"fail": 0
+				},
+				"All required fields maintained after update": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1080
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Task has ID": true,
+					"Task has Name": true,
+					"Task has Description": true,
+					"Task Priority is valid": true,
+					"Task name updated from numeric to alpha": true,
+					"Priority successfully changed from Urgent(1) to Low(3)": true,
+					"Description updated with emoji support": true,
+					"Time estimate reduced from 24h to 1h": true,
+					"Dates updated to near future (within next month)": true,
+					"Task update timestamp is recent": true,
+					"Task still belongs to correct list": true,
+					"Update handles character encoding correctly": true,
+					"All required fields maintained after update": true
+				}
+			]
+		},
+		{
+			"id": "5a528d65-01c3-405a-879d-bdcc236eabf2",
+			"name": "Delete Task - Permanent Removal",
+			"url": "https://api.clickup.com/api/v2/task/86c5fnjwu",
+			"time": 866,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Task deletion returns appropriate success status": true,
+				"Deletion response time is efficient": true,
+				"Deletion request processed within reasonable timeframe": true,
+				"Response body is appropriate for deletion": true,
+				"Response headers are appropriate": true
+			},
+			"testPassFailCounts": {
+				"Task deletion returns appropriate success status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deletion response time is efficient": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deletion request processed within reasonable timeframe": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is appropriate for deletion": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response headers are appropriate": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				866
+			],
+			"allTests": [
+				{
+					"Task deletion returns appropriate success status": true,
+					"Deletion response time is efficient": true,
+					"Deletion request processed within reasonable timeframe": true,
+					"Response body is appropriate for deletion": true,
+					"Response headers are appropriate": true
+				}
+			]
+		},
+		{
+			"id": "98e76c13-40e9-4d25-a9d9-e9f0c881b1de",
+			"name": "Verify Task Deletion - 404 Response",
+			"url": "https://api.clickup.com/api/v2/task/86c5fnjwu",
+			"time": 251,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Task deletion properly verified": true,
+				"Deletion verification response time acceptable": true,
+				"Error response structure is proper": true
+			},
+			"testPassFailCounts": {
+				"Task deletion properly verified": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deletion verification response time acceptable": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response structure is proper": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				251
+			],
+			"allTests": [
+				{
+					"Task deletion properly verified": true,
+					"Deletion verification response time acceptable": true,
+					"Error response structure is proper": true
+				}
+			]
+		},
+		{
+			"id": "e4c942f8-7fce-400b-b682-4906a4f7f5c0",
+			"name": "List Tasks - Post Operations Verification",
+			"url": "https://api.clickup.com/api/v2/list/901515198072/task",
+			"time": 346,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Response contains tasks array": true,
+				"Task 3 is completely absent from list (DELETED)": true,
+				"Task 2 multi-list status verification": true,
+				"Task 1 correctly absent from Additional List": true,
+				"List maintains integrity after task operations": true,
+				"List retrieval performance acceptable": true,
+				"No tasks contain suspicious or corrupted data": true,
+				"All tasks belong to correct list": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains tasks array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task 3 is completely absent from list (DELETED)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task 2 multi-list status verification": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task 1 correctly absent from Additional List": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List maintains integrity after task operations": {
+					"pass": 1,
+					"fail": 0
+				},
+				"List retrieval performance acceptable": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No tasks contain suspicious or corrupted data": {
+					"pass": 1,
+					"fail": 0
+				},
+				"All tasks belong to correct list": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				346
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Response contains tasks array": true,
+					"Task 3 is completely absent from list (DELETED)": true,
+					"Task 2 multi-list status verification": true,
+					"Task 1 correctly absent from Additional List": true,
+					"List maintains integrity after task operations": true,
+					"List retrieval performance acceptable": true,
+					"No tasks contain suspicious or corrupted data": true,
+					"All tasks belong to correct list": true
+				}
+			]
+		},
+		{
+			"id": "0d3b4b67-bd02-4128-af7d-213a43b6d6d8",
+			"name": "List Tasks - Template Integrity Check",
+			"url": "https://api.clickup.com/api/v2/list/901515198071/task",
+			"time": 369,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Template List contains Task 1 (primary location)": true,
+				"Template List contains Task 2 (original creation location)": true,
+				"Task 3 completely purged from Template List (DELETED)": true,
+				"Template List has expected task count": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Template List contains Task 1 (primary location)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Template List contains Task 2 (original creation location)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Task 3 completely purged from Template List (DELETED)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Template List has expected task count": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				369
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Template List contains Task 1 (primary location)": true,
+					"Template List contains Task 2 (original creation location)": true,
+					"Task 3 completely purged from Template List (DELETED)": true,
+					"Template List has expected task count": true
+				}
+			]
+		},
+		{
+			"id": "c7c49a56-116a-4f73-a27b-3e4e40b52614",
+			"name": "Create Parent Comment",
+			"url": "https://api.clickup.com/api/v2/task/86c5fnjwn/comment",
+			"time": 535,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Comment has ID": true,
+				"Comment has text content": true,
+				"Comment has user information": true,
+				"Comment has creation date": true,
+				"ClickUp comment creation - CORE validation": true,
+				"ClickUp relationships and workspace validation": true,
+				"Timestamp and version data validation": true,
+				"Error detection and business logic validation": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment has text content": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment has user information": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment has creation date": {
+					"pass": 1,
+					"fail": 0
+				},
+				"ClickUp comment creation - CORE validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"ClickUp relationships and workspace validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Timestamp and version data validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error detection and business logic validation": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				535
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Comment has ID": true,
+					"Comment has text content": true,
+					"Comment has user information": true,
+					"Comment has creation date": true,
+					"ClickUp comment creation - CORE validation": true,
+					"ClickUp relationships and workspace validation": true,
+					"Timestamp and version data validation": true,
+					"Error detection and business logic validation": true
+				}
+			]
+		},
+		{
+			"id": "0b9f5677-783b-41f3-91ed-13378d72304e",
+			"name": "Create Threaded Comment - Length Limits Test",
+			"url": "https://api.clickup.com/api/v2/comment/90150156265193/reply",
+			"time": 480,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Comment has ID": true,
+				"Comment has text content": true,
+				"Comment has user information": true,
+				"Comment has creation date": true,
+				"Very Long Length - Length boundary validation": true,
+				"Very Long Length - Threaded comment creation core validation": true,
+				"Very Long Length - Threaded comment parent relationship": true,
+				"Very Long Length - Content and Unicode preservation": true,
+				"Very Long Length - Response time performance": true,
+				"Very Long Length - API stability and error handling": true,
+				"Very Long Length - Rate limiting awareness": true,
+				"Very Long Length - Content integrity verification": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Comment has ID": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Comment has text content": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Comment has user information": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Comment has creation date": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Minimal Length - Length boundary validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Minimal Length - Threaded comment creation core validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Minimal Length - Threaded comment parent relationship": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Minimal Length - Content and Unicode preservation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Minimal Length - Response time performance": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Minimal Length - API stability and error handling": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Minimal Length - Rate limiting awareness": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Minimal Length - Content integrity verification": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Normal Length - Length boundary validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Normal Length - Threaded comment creation core validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Normal Length - Threaded comment parent relationship": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Normal Length - Content and Unicode preservation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Normal Length - Response time performance": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Normal Length - API stability and error handling": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Normal Length - Rate limiting awareness": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Normal Length - Content integrity verification": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Very Long Length - Length boundary validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Very Long Length - Threaded comment creation core validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Very Long Length - Threaded comment parent relationship": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Very Long Length - Content and Unicode preservation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Very Long Length - Response time performance": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Very Long Length - API stability and error handling": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Very Long Length - Rate limiting awareness": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Very Long Length - Content integrity verification": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				331,
+				276,
+				480
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Comment has ID": true,
+					"Comment has text content": true,
+					"Comment has user information": true,
+					"Comment has creation date": true,
+					"Minimal Length - Length boundary validation": true,
+					"Minimal Length - Threaded comment creation core validation": true,
+					"Minimal Length - Threaded comment parent relationship": true,
+					"Minimal Length - Content and Unicode preservation": true,
+					"Minimal Length - Response time performance": true,
+					"Minimal Length - API stability and error handling": true,
+					"Minimal Length - Rate limiting awareness": true,
+					"Minimal Length - Content integrity verification": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Comment has ID": true,
+					"Comment has text content": true,
+					"Comment has user information": true,
+					"Comment has creation date": true,
+					"Normal Length - Length boundary validation": true,
+					"Normal Length - Threaded comment creation core validation": true,
+					"Normal Length - Threaded comment parent relationship": true,
+					"Normal Length - Content and Unicode preservation": true,
+					"Normal Length - Response time performance": true,
+					"Normal Length - API stability and error handling": true,
+					"Normal Length - Rate limiting awareness": true,
+					"Normal Length - Content integrity verification": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Comment has ID": true,
+					"Comment has text content": true,
+					"Comment has user information": true,
+					"Comment has creation date": true,
+					"Very Long Length - Length boundary validation": true,
+					"Very Long Length - Threaded comment creation core validation": true,
+					"Very Long Length - Threaded comment parent relationship": true,
+					"Very Long Length - Content and Unicode preservation": true,
+					"Very Long Length - Response time performance": true,
+					"Very Long Length - API stability and error handling": true,
+					"Very Long Length - Rate limiting awareness": true,
+					"Very Long Length - Content integrity verification": true
+				}
+			]
+		},
+		{
+			"id": "7dfaea60-33a1-4cf1-a36b-f0a516ddb149",
+			"name": "Create Additional Parent Comment",
+			"url": "https://api.clickup.com/api/v2/task/86c5fnjwn/comment",
+			"time": 521,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Comment has ID": true,
+				"Comment has text content": true,
+				"Comment has user information": true,
+				"Comment has creation date": true,
+				"Second comment creation - basic validation": true,
+				"Comments comparison - Different IDs and timestamps": true,
+				"Comments comparison - Same task context": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment has ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment has text content": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment has user information": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment has creation date": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Second comment creation - basic validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comments comparison - Different IDs and timestamps": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comments comparison - Same task context": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				521
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Comment has ID": true,
+					"Comment has text content": true,
+					"Comment has user information": true,
+					"Comment has creation date": true,
+					"Second comment creation - basic validation": true,
+					"Comments comparison - Different IDs and timestamps": true,
+					"Comments comparison - Same task context": true
+				}
+			]
+		},
+		{
+			"id": "9cc98078-53e2-4dc0-962c-3f45cb43d5af",
+			"name": "Create Comment  - Empty Text",
+			"url": "https://api.clickup.com/api/v2/task/86c5fnjwn/comment",
+			"time": 113,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code indicates validation error": true,
+				"No comment created with empty text": true,
+				"Validation error is descriptive": true,
+				"Response structure is valid error format": true
+			},
+			"testPassFailCounts": {
+				"Status code indicates validation error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No comment created with empty text": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation error is descriptive": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response structure is valid error format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				113
+			],
+			"allTests": [
+				{
+					"Status code indicates validation error": true,
+					"No comment created with empty text": true,
+					"Validation error is descriptive": true,
+					"Response structure is valid error format": true
+				}
+			]
+		},
+		{
+			"id": "ddcb704f-df6b-40e4-879f-ba7764cc65a1",
+			"name": "Get All Task Comments",
+			"url": "https://api.clickup.com/api/v2/task/86c5fnjwn/comment",
+			"time": 484,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Response contains comments array": true,
+				"Array contains expected minimum number of comments": true,
+				"All array items have basic comment structure": true,
+				"Current test session comments validation": true,
+				"Comment content verification": true,
+				"Length Limits Test Investigation": true,
+				"Unicode preservation check": true,
+				"Session comments completeness": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains comments array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Array contains expected minimum number of comments": {
+					"pass": 1,
+					"fail": 0
+				},
+				"All array items have basic comment structure": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Current test session comments validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment content verification": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Length Limits Test Investigation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Unicode preservation check": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Session comments completeness": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				484
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Response contains comments array": true,
+					"Array contains expected minimum number of comments": true,
+					"All array items have basic comment structure": true,
+					"Current test session comments validation": true,
+					"Comment content verification": true,
+					"Length Limits Test Investigation": true,
+					"Unicode preservation check": true,
+					"Session comments completeness": true
+				}
+			]
+		},
+		{
+			"id": "12f61ec6-e897-47ea-b3c8-d305431f0eaa",
+			"name": "Update Comment Text",
+			"url": "https://api.clickup.com/api/v2/comment/90150156265193",
+			"time": 291,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Update request data validation": true,
+				"PUT operation error detection": true,
+				"Update business logic validation": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Update request data validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"PUT operation error detection": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Update business logic validation": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				291
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Update request data validation": true,
+					"PUT operation error detection": true,
+					"Update business logic validation": true
+				}
+			]
+		},
+		{
+			"id": "d9990b42-26c0-4a53-8584-bdfc7e3f87ac",
+			"name": "Resolve Comment",
+			"url": "https://api.clickup.com/api/v2/comment/90150156265193",
+			"time": 293,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Rate limiting functionality": true,
+				"Business logic validation": true,
+				"No sensitive data exposure": true,
+				"Response structure integrity": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Rate limiting functionality": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Business logic validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No sensitive data exposure": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response structure integrity": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				293
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Rate limiting functionality": true,
+					"Business logic validation": true,
+					"No sensitive data exposure": true,
+					"Response structure integrity": true
+				}
+			]
+		},
+		{
+			"id": "cc41a26e-4960-43ba-a947-224120e388cd",
+			"name": "Verify Comment Update Results",
+			"url": "https://api.clickup.com/api/v2/task/86c5fnjwn/comment",
+			"time": 270,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2000ms": true,
+				"Response has correct Content-Type": true,
+				"Updated comment is present in response": true,
+				"Comment text was successfully updated": true,
+				"Comment update markers are preserved": true,
+				"Comment resolved status is correctly applied": true,
+				"Comment metadata consistency after updates": true,
+				"Basic response integrity": true,
+				"End-to-end update verification summary": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Updated comment is present in response": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment text was successfully updated": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment update markers are preserved": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment resolved status is correctly applied": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment metadata consistency after updates": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Basic response integrity": {
+					"pass": 1,
+					"fail": 0
+				},
+				"End-to-end update verification summary": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				270
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2000ms": true,
+					"Response has correct Content-Type": true,
+					"Updated comment is present in response": true,
+					"Comment text was successfully updated": true,
+					"Comment update markers are preserved": true,
+					"Comment resolved status is correctly applied": true,
+					"Comment metadata consistency after updates": true,
+					"Basic response integrity": true,
+					"End-to-end update verification summary": true
+				}
+			]
+		},
+		{
+			"id": "4286653e-b815-4216-8046-a0e9114b855b",
+			"name": "Delete Second Comment",
+			"url": "https://api.clickup.com/api/v2/comment/90150156265198",
+			"time": 298,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Comment deletion returns appropriate success status": true,
+				"Deletion response time is efficient": true,
+				"Deletion response contains confirmation": true
+			},
+			"testPassFailCounts": {
+				"Comment deletion returns appropriate success status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deletion response time is efficient": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deletion response contains confirmation": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				298
+			],
+			"allTests": [
+				{
+					"Comment deletion returns appropriate success status": true,
+					"Deletion response time is efficient": true,
+					"Deletion response contains confirmation": true
+				}
+			]
+		},
+		{
+			"id": "88eb4afa-caf9-4868-a705-2d86d8829c66",
+			"name": "Verify  Deletion",
+			"url": "https://api.clickup.com/api/v2/comment/90150156265198",
+			"time": 93,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Comment deletion verification": true,
+				"Deletion verification performance": true,
+				"Response format is valid": true
+			},
+			"testPassFailCounts": {
+				"Comment deletion verification": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deletion verification performance": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response format is valid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				93
+			],
+			"allTests": [
+				{
+					"Comment deletion verification": true,
+					"Deletion verification performance": true,
+					"Response format is valid": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 17151,
+	"collection": {
+		"requests": [
+			{
+				"id": "23b84bdb-6ae9-4fea-abc1-221e2cc23142",
+				"method": "GET"
+			},
+			{
+				"id": "d2a4cafc-b2fd-4675-93ab-29fdbf5fbb6b",
+				"method": "GET"
+			},
+			{
+				"id": "7d175e68-41ef-4384-9252-e651a37aeba5",
+				"method": "GET"
+			},
+			{
+				"id": "8bd11baa-ad71-4746-8b29-440e44c0b55d",
+				"method": "GET"
+			},
+			{
+				"id": "701ffd1e-d26b-439e-8da6-501dd0f1b552",
+				"method": "PUT"
+			},
+			{
+				"id": "291af5f6-9390-49c1-a4a5-d7d9edd55d25",
+				"method": "POST"
+			},
+			{
+				"id": "a82e95cc-7419-43fc-848c-000a2b3e34ff",
+				"method": "POST"
+			},
+			{
+				"id": "40c1471b-cdfd-4940-8563-4f78b8e8c50d",
+				"method": "GET"
+			},
+			{
+				"id": "79fdaf72-c2a8-4968-b53f-69155c29ab3b",
+				"method": "PUT"
+			},
+			{
+				"id": "e35a5e90-a00d-491f-8646-4242e8a89f19",
+				"method": "DELETE"
+			},
+			{
+				"id": "d5e6987a-0b4e-48d1-9b47-0eb114d99470",
+				"method": "GET"
+			},
+			{
+				"id": "a5d1c0e4-4072-4090-b4dd-fa6b1f71c9cf",
+				"method": "GET"
+			},
+			{
+				"id": "ddd6d8a0-898c-454e-a894-23692a15ea83",
+				"method": "POST"
+			},
+			{
+				"id": "5aa7c238-cc64-49fc-b28e-2c941d5f5268",
+				"method": "POST"
+			},
+			{
+				"id": "50d5fb96-8918-43c9-a56d-987326f02520",
+				"method": "POST"
+			},
+			{
+				"id": "eee9ba5b-d0bf-412c-a6c1-b2280ff36509",
+				"method": "GET"
+			},
+			{
+				"id": "113e50b0-f8bc-4d90-924c-c4958ff33c25",
+				"method": "PUT"
+			},
+			{
+				"id": "3ae1d1d9-175f-4590-baec-64cee0606383",
+				"method": "DELETE"
+			},
+			{
+				"id": "36073256-b499-4e4a-89d2-6584145fea3b",
+				"method": "POST"
+			},
+			{
+				"id": "d84daed9-6638-4e64-b130-21f4d5409d37",
+				"method": "GET"
+			},
+			{
+				"id": "fbfa87d5-b0f6-4fde-b927-2d6eb79fd483",
+				"method": "POST"
+			},
+			{
+				"id": "36f76d53-0029-4f66-9d8c-5388a633769f",
+				"method": "POST"
+			},
+			{
+				"id": "067f8026-a42b-4eeb-97b2-770caff0a17e",
+				"method": "POST"
+			},
+			{
+				"id": "c4f275f0-07a8-4a91-803a-2e3d6f2d40be",
+				"method": "POST"
+			},
+			{
+				"id": "ac516ed9-52e0-4e07-81ed-c1908ee93c2c",
+				"method": "POST"
+			},
+			{
+				"id": "e4c1ce3e-3f5e-4a57-9544-ec1af83bbd0f",
+				"method": "POST"
+			},
+			{
+				"id": "1311d768-50fa-4016-8ce4-9d2fc7fbbedb",
+				"method": "PUT"
+			},
+			{
+				"id": "5a528d65-01c3-405a-879d-bdcc236eabf2",
+				"method": "DELETE"
+			},
+			{
+				"id": "98e76c13-40e9-4d25-a9d9-e9f0c881b1de",
+				"method": "GET"
+			},
+			{
+				"id": "e4c942f8-7fce-400b-b682-4906a4f7f5c0",
+				"method": "GET"
+			},
+			{
+				"id": "0d3b4b67-bd02-4128-af7d-213a43b6d6d8",
+				"method": "GET"
+			},
+			{
+				"id": "c7c49a56-116a-4f73-a27b-3e4e40b52614",
+				"method": "POST"
+			},
+			{
+				"id": "0b9f5677-783b-41f3-91ed-13378d72304e",
+				"method": "POST"
+			},
+			{
+				"id": "0b9f5677-783b-41f3-91ed-13378d72304e",
+				"method": "POST"
+			},
+			{
+				"id": "0b9f5677-783b-41f3-91ed-13378d72304e",
+				"method": "POST"
+			},
+			{
+				"id": "7dfaea60-33a1-4cf1-a36b-f0a516ddb149",
+				"method": "POST"
+			},
+			{
+				"id": "9cc98078-53e2-4dc0-962c-3f45cb43d5af",
+				"method": "POST"
+			},
+			{
+				"id": "ddcb704f-df6b-40e4-879f-ba7764cc65a1",
+				"method": "GET"
+			},
+			{
+				"id": "12f61ec6-e897-47ea-b3c8-d305431f0eaa",
+				"method": "PUT"
+			},
+			{
+				"id": "d9990b42-26c0-4a53-8584-bdfc7e3f87ac",
+				"method": "PUT"
+			},
+			{
+				"id": "cc41a26e-4960-43ba-a947-224120e388cd",
+				"method": "GET"
+			},
+			{
+				"id": "4286653e-b815-4216-8046-a0e9114b855b",
+				"method": "DELETE"
+			},
+			{
+				"id": "88eb4afa-caf9-4868-a705-2d86d8829c66",
+				"method": "GET"
+			}
+		]
+	}
+}
